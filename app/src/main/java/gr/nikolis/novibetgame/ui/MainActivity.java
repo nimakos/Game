@@ -2,7 +2,7 @@ package gr.nikolis.novibetgame.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
+import android.widget.ListView;
 
 import com.journaldev.novibetgame.R;
 
@@ -16,17 +16,19 @@ import gr.nikolis.novibetgame.observers.OnGameUpdateResponse;
 import gr.nikolis.novibetgame.observers.OnHeadLineResponse;
 import gr.nikolis.novibetgame.observers.OnHeadLineUpdateResponse;
 import gr.nikolis.novibetgame.repository.Repository;
+import gr.nikolis.novibetgame.ui.adapter.MyArrayAdapter;
 
 public class MainActivity extends AppCompatActivity implements OnGameResponse, OnHeadLineResponse, OnGameUpdateResponse, OnHeadLineUpdateResponse {
 
-    private RecyclerView recyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager layoutManager;
+    private ListView listView;
+    private MyArrayAdapter myArrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        initUI();
 
         Repository repository = new Repository();
         UserData userData = new UserData(getApplicationContext());
@@ -39,14 +41,14 @@ public class MainActivity extends AppCompatActivity implements OnGameResponse, O
     }
 
     public void initUI() {
-
+        listView = findViewById(R.id.listView);listView.setAdapter(myArrayAdapter);
+        listView.setAdapter(myArrayAdapter);
     }
 
     @Override
     public void onGameSuccess(List<Games> games) {
-        for (Games games1 : games) {
-            games1.getBetViews();
-        }
+        myArrayAdapter = new MyArrayAdapter(getApplicationContext(), R.layout.view_headline, games);
+
     }
 
     @Override
