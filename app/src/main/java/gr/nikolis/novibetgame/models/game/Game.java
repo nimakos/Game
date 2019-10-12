@@ -1,11 +1,11 @@
-package gr.nikolis.novibetgame.models.goal;
+package gr.nikolis.novibetgame.models.game;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class Games {
+public class Game {
 
     @SerializedName("betViews")
     @Expose

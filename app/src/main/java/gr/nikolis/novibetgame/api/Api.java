@@ -4,7 +4,7 @@ import java.util.List;
 
 import gr.nikolis.novibetgame.models.Login;
 import gr.nikolis.novibetgame.models.User;
-import gr.nikolis.novibetgame.models.goal.Games;
+import gr.nikolis.novibetgame.models.game.Game;
 import gr.nikolis.novibetgame.models.headlines.HeadLine;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -22,13 +22,13 @@ public interface Api {
     Call<ResponseBody> getSecret(@Header("Authorization") String authorization);
 
     @GET("games")
-    Call<List<Games>> getGames(@Header("Authorization") String authorization);
+    Call<List<Game>> getGames(@Header("Authorization") String authorization);
 
     @GET("headlines")
     Call<List<HeadLine>> getHeadLines(@Header("Authorization") String authorization);
 
     @GET("gamesupdate")
-    Call<List<Games>> getGamesUpdate(@Header("Authorization") String authorization);
+    Call<List<Game>> getGamesUpdate(@Header("Authorization") String authorization);
 
     @GET("headlinesupdate")
     Call<List<HeadLine>> getHeadlinesUpdate(@Header("Authorization") String authorization);

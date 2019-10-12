@@ -3,7 +3,7 @@ package gr.nikolis.novibetgame.repository;
 import java.util.List;
 
 import gr.nikolis.novibetgame.models.Login;
-import gr.nikolis.novibetgame.models.goal.Games;
+import gr.nikolis.novibetgame.models.game.Game;
 import gr.nikolis.novibetgame.models.headlines.HeadLine;
 import gr.nikolis.novibetgame.observers.OnGameResponse;
 import gr.nikolis.novibetgame.observers.OnGameUpdateResponse;
@@ -70,16 +70,16 @@ public class Repository {
 
     public void getGames(String authentication, OnGameResponse onGameResponse) {
         DefaultExecutorSupplier.getInstance().forBackgroundTasks().execute(() -> api.getGames(authentication)
-                .enqueue(new Callback<List<Games>>() {
+                .enqueue(new Callback<List<Game>>() {
                     @Override
-                    public void onResponse(Call<List<Games>> call, Response<List<Games>> response) {
+                    public void onResponse(Call<List<Game>> call, Response<List<Game>> response) {
                         if (response.isSuccessful() && response.body() != null) {
                             onGameResponse.onGameSuccess(response.body());
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<List<Games>> call, Throwable t) {
+                    public void onFailure(Call<List<Game>> call, Throwable t) {
                         onGameResponse.onGameError(t);
                     }
                 }));
@@ -102,14 +102,14 @@ public class Repository {
 
     public void getGameUpdates(String authentication, OnGameUpdateResponse onGameUpdateResponse) {
         DefaultExecutorSupplier.getInstance().forBackgroundTasks().execute(() -> api.getGamesUpdate(authentication)
-                .enqueue(new Callback<List<Games>>() {
+                .enqueue(new Callback<List<Game>>() {
                     @Override
-                    public void onResponse(Call<List<Games>> call, Response<List<Games>> response) {
+                    public void onResponse(Call<List<Game>> call, Response<List<Game>> response) {
                         onGameUpdateResponse.onGameUpdateSuccess(response.body());
                     }
 
                     @Override
-                    public void onFailure(Call<List<Games>> call, Throwable t) {
+                    public void onFailure(Call<List<Game>> call, Throwable t) {
                         onGameUpdateResponse.onGameUpdateError(t);
                     }
                 }));

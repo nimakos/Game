@@ -1,4 +1,4 @@
-package gr.nikolis.novibetgame.models.goal;
+package gr.nikolis.novibetgame.models.game;
 
 import java.util.Date;
 

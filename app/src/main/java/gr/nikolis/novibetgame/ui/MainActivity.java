@@ -6,10 +6,16 @@ import android.widget.ListView;
 
 import com.journaldev.novibetgame.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import gr.nikolis.novibetgame.common.Common;
 import gr.nikolis.novibetgame.metadata.UserData;
-import gr.nikolis.novibetgame.models.goal.Games;
+import gr.nikolis.novibetgame.models.game.BetView;
+import gr.nikolis.novibetgame.models.game.Competition;
+import gr.nikolis.novibetgame.models.game.Event;
+import gr.nikolis.novibetgame.models.FinalObject;
+import gr.nikolis.novibetgame.models.game.Game;
 import gr.nikolis.novibetgame.models.headlines.HeadLine;
 import gr.nikolis.novibetgame.observers.OnGameResponse;
 import gr.nikolis.novibetgame.observers.OnGameUpdateResponse;
@@ -22,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements OnGameResponse, O
 
     private ListView listView;
     private MyArrayAdapter myArrayAdapter;
+    private List<FinalObject> finalObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +48,31 @@ public class MainActivity extends AppCompatActivity implements OnGameResponse, O
     }
 
     public void initUI() {
-        listView = findViewById(R.id.listView);listView.setAdapter(myArrayAdapter);
+        listView = findViewById(R.id.listView);
+        listView.setAdapter(myArrayAdapter);
         listView.setAdapter(myArrayAdapter);
     }
 
     @Override
-    public void onGameSuccess(List<Games> games) {
-        myArrayAdapter = new MyArrayAdapter(getApplicationContext(), R.layout.view_headline, games);
-
+    public void onGameSuccess(List<Game> games) {
+        finalObject = new ArrayList<>();
+        int i = 0;
+        for (Game game : games) {
+            for (BetView betView : game.getBetViews()) {
+                for (Competition competition : betView.getCompetitions()) {
+                    for (Event event : competition.getEvents()) {
+                        finalObject.get(i).setView(Common.GAMES_VIEW);
+                        finalObject.get(i).setHomeGoals(event.getLiveData().getHomeGoals());
+                        finalObject.get(i).setAwayGoals(event.getLiveData().getAwayGoals());
+                        finalObject.get(i).setElapsed(event.getLiveData().getElapsed());
+                        finalObject.get(i).setCompetitor1(event.getAdditionalCaptions().getCompetitor1());
+                        finalObject.get(i).setCompetitor2(event.getAdditionalCaptions().getCompetitor2());
+                        i++;
+                    }
+                }
+            }
+        }
+        myArrayAdapter = new MyArrayAdapter<>(getApplicationContext(), R.layout.view_headline, finalObject);
     }
 
     @Override
@@ -67,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements OnGameResponse, O
     }
 
     @Override
-    public void onGameUpdateSuccess(List<Games> games) {
+    public void onGameUpdateSuccess(List<Game> games) {
 
     }
 
@@ -77,8 +101,8 @@ public class MainActivity extends AppCompatActivity implements OnGameResponse, O
     }
 
     @Override
-    public void onHeadLineUpdateSuccess(List<HeadLine> games) {
-
+    public void onHeadLineUpdateSuccess(List<HeadLine> headLines) {
+        myArrayAdapter = new MyArrayAdapter<>(getApplicationContext(), R.layout.view_headline, finalObject);
     }
 
     @Override

@@ -2,11 +2,11 @@ package gr.nikolis.novibetgame.observers;
 
 import java.util.List;
 
-import gr.nikolis.novibetgame.models.goal.Games;
+import gr.nikolis.novibetgame.models.game.Game;
 
 public interface OnGameResponse {
 
-    void onGameSuccess(List<Games> games);
+    void onGameSuccess(List<Game> games);
 
     void onGameError(Throwable t);
 }
