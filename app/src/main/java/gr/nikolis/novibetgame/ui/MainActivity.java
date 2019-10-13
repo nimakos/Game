@@ -16,7 +16,6 @@ import gr.nikolis.novibetgame.models.game.BetView;
 import gr.nikolis.novibetgame.models.game.Competition;
 import gr.nikolis.novibetgame.models.game.Event;
 import gr.nikolis.novibetgame.models.game.Game;
-import gr.nikolis.novibetgame.models.game.Market;
 import gr.nikolis.novibetgame.models.headlines.HeadLine;
 import gr.nikolis.novibetgame.observers.OnGameResponse;
 import gr.nikolis.novibetgame.observers.OnGameUpdateResponse;
@@ -55,23 +54,21 @@ public class MainActivity extends AppCompatActivity implements OnGameResponse, O
     @Override
     public void onGameSuccess(List<Game> games) {
         finalObjectList = new ArrayList<>();
-        FinalObject finalObject = new FinalObject();
-       O: for (Game game : games) {
+        ;
+        for (Game game : games) {
             for (BetView betView : game.getBetViews()) {
-                for (Competition competition : betView.getCompetitions()) {
+               for (Competition competition : betView.getCompetitions()) {
                     for (Event event : competition.getEvents()) {
+                        FinalObject finalObject = new FinalObject();
                         finalObject.setView(Common.GAMES_VIEW);
                         finalObject.setHomeGoals(event.getLiveData().getHomeGoals());
                         finalObject.setAwayGoals(event.getLiveData().getAwayGoals());
                         finalObject.setElapsed(event.getLiveData().getElapsed());
                         finalObject.setCompetitor1(event.getAdditionalCaptions().getCompetitor1());
                         finalObject.setCompetitor2(event.getAdditionalCaptions().getCompetitor2());
-                        for (Market market : event.getMarkets()) {
-                            finalObject.setBetItems(market.getBetItems());
-                            break;
-                        }
+                        finalObject.setBetItems(event.getMarkets().get(0).getBetItems());
+
                         finalObjectList.add(finalObject);
-                        break O;
                     }
                 }
             }
