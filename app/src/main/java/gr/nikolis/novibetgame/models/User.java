@@ -1,8 +1,18 @@
 package gr.nikolis.novibetgame.models;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class User {
+
+    @SerializedName("token_type")
+    @Expose
     private String type;
+
+    @SerializedName("access_token")
+    @Expose
     private String token;
+
     private boolean isValidated;
 
     public boolean isValidated() {

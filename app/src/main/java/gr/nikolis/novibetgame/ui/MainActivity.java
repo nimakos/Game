@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements OnGameResponse, O
 
     private ListView listView;
     private MyArrayAdapter myArrayAdapter;
-    private List<FinalObject> finalObject;
+    private List<FinalObject> finalObjectList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,35 +49,34 @@ public class MainActivity extends AppCompatActivity implements OnGameResponse, O
 
     public void initUI() {
         listView = findViewById(R.id.listView);
-        listView.setAdapter(myArrayAdapter);
-        listView.setAdapter(myArrayAdapter);
     }
 
     @Override
     public void onGameSuccess(List<Game> games) {
-        finalObject = new ArrayList<>();
-        int i = 0;
+        finalObjectList = new ArrayList<>();
         for (Game game : games) {
             for (BetView betView : game.getBetViews()) {
                 for (Competition competition : betView.getCompetitions()) {
                     for (Event event : competition.getEvents()) {
-                        finalObject.get(i).setView(Common.GAMES_VIEW);
-                        finalObject.get(i).setHomeGoals(event.getLiveData().getHomeGoals());
-                        finalObject.get(i).setAwayGoals(event.getLiveData().getAwayGoals());
-                        finalObject.get(i).setElapsed(event.getLiveData().getElapsed());
-                        finalObject.get(i).setCompetitor1(event.getAdditionalCaptions().getCompetitor1());
-                        finalObject.get(i).setCompetitor2(event.getAdditionalCaptions().getCompetitor2());
-                        i++;
+                        FinalObject finalObject = new FinalObject();
+                        finalObject.setView(Common.GAMES_VIEW);
+                        finalObject.setHomeGoals(event.getLiveData().getHomeGoals());
+                        finalObject.setAwayGoals(event.getLiveData().getAwayGoals());
+                        finalObject.setElapsed(event.getLiveData().getElapsed());
+                        finalObject.setCompetitor1(event.getAdditionalCaptions().getCompetitor1());
+                        finalObject.setCompetitor2(event.getAdditionalCaptions().getCompetitor2());
+                        finalObjectList.add(finalObject);
                     }
                 }
             }
         }
-        myArrayAdapter = new MyArrayAdapter<>(getApplicationContext(), R.layout.view_headline, finalObject);
+        myArrayAdapter = new MyArrayAdapter<>(getApplicationContext(), R.layout.view_games, finalObjectList);
+        listView.setAdapter(myArrayAdapter);
     }
 
     @Override
     public void onGameError(Throwable t) {
-
+        System.out.println(t);
     }
 
     @Override
@@ -102,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements OnGameResponse, O
 
     @Override
     public void onHeadLineUpdateSuccess(List<HeadLine> headLines) {
-        myArrayAdapter = new MyArrayAdapter<>(getApplicationContext(), R.layout.view_headline, finalObject);
+        myArrayAdapter = new MyArrayAdapter<>(getApplicationContext(), R.layout.view_headline, finalObjectList);
     }
 
     @Override

@@ -1,10 +1,11 @@
 package gr.nikolis.novibetgame.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.journaldev.novibetgame.R;
+
 import gr.nikolis.novibetgame.metadata.UserData;
 
 public class SplashActivity extends AppCompatActivity {
@@ -13,6 +14,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
 
         UserData userData= new UserData(getApplication());
 

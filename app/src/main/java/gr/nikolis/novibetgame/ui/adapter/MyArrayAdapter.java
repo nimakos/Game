@@ -16,7 +16,6 @@ import java.util.List;
 
 import gr.nikolis.novibetgame.common.Common;
 import gr.nikolis.novibetgame.models.FinalObject;
-import gr.nikolis.novibetgame.models.game.Game;
 
 public class MyArrayAdapter<T> extends ArrayAdapter<T> {
     private Context context;
@@ -32,7 +31,6 @@ public class MyArrayAdapter<T> extends ArrayAdapter<T> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        if (list instanceof FinalObject) {
             FinalObject finalObject = (FinalObject) this.list.get(position);
             if (convertView == null) {
                 if (getItemViewType(position) == Common.HEADLINE_VIEW) {
@@ -65,12 +63,11 @@ public class MyArrayAdapter<T> extends ArrayAdapter<T> {
 
                 firstTeam.setText(finalObject.getCompetitor1());
                 secondTeam.setText(finalObject.getCompetitor2());
-                firstTeamGoals.setText(finalObject.getHomeGoals());
-                secondTeamGoals.setText(finalObject.getAwayGoals());
-                time.setText(finalObject.getElapsed());
+                firstTeamGoals.setText("" + finalObject.getHomeGoals());
+                secondTeamGoals.setText("" + finalObject.getAwayGoals());
+                time.setText("" + finalObject.getElapsed());
                 //vile.setText(finalObject.get);
             }
-        }
 
 
         return convertView;
@@ -83,7 +80,8 @@ public class MyArrayAdapter<T> extends ArrayAdapter<T> {
 
     @Override
     public int getItemViewType(int position) {
-        if (list instanceof Game) {
+        FinalObject finalObject = (FinalObject) list.get(position);
+        if (finalObject.getView() == Common.GAMES_VIEW) {
             return Common.GAMES_VIEW;
         } else {
             return Common.HEADLINE_VIEW;

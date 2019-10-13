@@ -22,8 +22,8 @@ public class LiveData {
     private double elapsedSeconds;
     private int duration;
     private int durationSeconds;
-    private int timeToNextPhase;
-    private int timeToNextPhaseSeconds;
+    private String timeToNextPhase;
+    private double timeToNextPhaseSeconds;
     private String phaseSysname;
     private String phaseCaption;
     private String phaseCaptionLong;
@@ -187,19 +187,19 @@ public class LiveData {
         this.durationSeconds = durationSeconds;
     }
 
-    public int getTimeToNextPhase() {
+    public String getTimeToNextPhase() {
         return timeToNextPhase;
     }
 
-    public void setTimeToNextPhase(int timeToNextPhase) {
+    public void setTimeToNextPhase(String timeToNextPhase) {
         this.timeToNextPhase = timeToNextPhase;
     }
 
-    public int getTimeToNextPhaseSeconds() {
+    public double getTimeToNextPhaseSeconds() {
         return timeToNextPhaseSeconds;
     }
 
-    public void setTimeToNextPhaseSeconds(int timeToNextPhaseSeconds) {
+    public void setTimeToNextPhaseSeconds(double timeToNextPhaseSeconds) {
         this.timeToNextPhaseSeconds = timeToNextPhaseSeconds;
     }
 

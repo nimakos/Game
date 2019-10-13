@@ -8,7 +8,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ResponseGameImp extends ResponseGame {
-    private static final String BASE_URL = "https://mobiletest.free.beeceptor.com/";
+    private static final String BASE_URL = "http://www.mocky.io/v2/";
 
     @Override
     public Api getApi() {
