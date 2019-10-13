@@ -3,6 +3,8 @@ package gr.nikolis.novibetgame.models.game;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class Event {
 
     @SerializedName("betContextId")
@@ -28,6 +30,18 @@ public class Event {
     @SerializedName("hasBetContextInfo")
     @Expose
     private boolean hasBetContextInfo;
+
+    @SerializedName("markets")
+    @Expose
+    private List<Market> markets;
+
+    public List<Market> getMarkets() {
+        return markets;
+    }
+
+    public void setMarkets(List<Market> markets) {
+        this.markets = markets;
+    }
 
     public int getBetContextId() {
         return betContextId;

@@ -1,5 +1,9 @@
 package gr.nikolis.novibetgame.models;
 
+import java.util.List;
+
+import gr.nikolis.novibetgame.models.game.BetItem;
+
 public class FinalObject {
 
     private String competitor1;
@@ -10,8 +14,16 @@ public class FinalObject {
     private String competitor1Caption;
     private String competitor2Caption;
     private String startTime;
+    private List<BetItem> betItems;
     private int view;
 
+    public List<BetItem> getBetItems() {
+        return betItems;
+    }
+
+    public void setBetItems(List<BetItem> betItems) {
+        this.betItems = betItems;
+    }
 
     public String getCompetitor1Caption() {
         return competitor1Caption;

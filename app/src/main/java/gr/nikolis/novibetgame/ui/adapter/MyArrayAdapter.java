@@ -16,6 +16,7 @@ import java.util.List;
 
 import gr.nikolis.novibetgame.common.Common;
 import gr.nikolis.novibetgame.models.FinalObject;
+import gr.nikolis.novibetgame.models.game.BetItem;
 
 public class MyArrayAdapter<T> extends ArrayAdapter<T> {
     private Context context;
@@ -66,7 +67,15 @@ public class MyArrayAdapter<T> extends ArrayAdapter<T> {
                 firstTeamGoals.setText("" + finalObject.getHomeGoals());
                 secondTeamGoals.setText("" + finalObject.getAwayGoals());
                 time.setText("" + finalObject.getElapsed());
-                //vile.setText(finalObject.get);
+                for (BetItem betItem : finalObject.getBetItems()) {
+                    if (betItem.getCode().equals("1")) {
+                        vile.setText(betItem.getCode() + "\t\t\t" + betItem.getPrise());
+                    } else if (betItem.getCode().equals("X")) {
+                        draw.setText(betItem.getCode() + "\t\t\t" + betItem.getPrise());
+                    } else {
+                        double1.setText(betItem.getCode() + "\t\t\t" + betItem.getPrise());
+                    }
+                }
             }
 
 
