@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements OnGameResponse, O
                         finalObject.setView(Common.GAMES_VIEW);
                         finalObject.setHomeGoals(event.getLiveData().getHomeGoals());
                         finalObject.setAwayGoals(event.getLiveData().getAwayGoals());
-                        finalObject.setElapsed(event.getLiveData().getElapsed());
+                        finalObject.setElapsed(remakeElapsedTime(event.getLiveData().getElapsed()));
                         finalObject.setCompetitor1(event.getAdditionalCaptions().getCompetitor1());
                         finalObject.setCompetitor2(event.getAdditionalCaptions().getCompetitor2());
                         finalObject.setBetItems(event.getMarkets().get(0).getBetItems());
@@ -110,5 +110,16 @@ public class MainActivity extends AppCompatActivity implements OnGameResponse, O
     @Override
     public void onHeadLineUpdateGameError(Throwable t) {
 
+    }
+
+    private String remakeElapsedTime(String time) {
+        String[] tempTime = time.split(":");
+        int round = 0;
+        if (tempTime[0].equals("00") || tempTime[0].contains("-")) {
+            round = (int)((Double.parseDouble(tempTime[2])));
+            return tempTime[1] + ":" + round;
+        } else {
+            return tempTime[0] + ":" + tempTime[1] + round;
+        }
     }
 }
