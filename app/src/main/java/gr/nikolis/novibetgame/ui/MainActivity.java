@@ -114,12 +114,17 @@ public class MainActivity extends AppCompatActivity implements OnGameResponse, O
 
     private String remakeElapsedTime(String time) {
         String[] tempTime = time.split(":");
-        int round = 0;
-        if (tempTime[0].equals("00") || tempTime[0].contains("-")) {
-            round = (int)((Double.parseDouble(tempTime[2])));
-            return tempTime[1] + ":" + round;
-        } else {
-            return tempTime[0] + ":" + tempTime[1] + round;
+        int hours;
+        int minutes;
+        int seconds;
+        try{
+            hours =  Integer.valueOf(tempTime[0]) * 60;
+
+        }catch (Exception e){
+            hours = 0;
         }
+        minutes = Integer.valueOf(tempTime[1]);
+        seconds = (int)(Math.round(Double.parseDouble(tempTime[2])));
+        return hours + minutes + ":" + seconds;
     }
 }
