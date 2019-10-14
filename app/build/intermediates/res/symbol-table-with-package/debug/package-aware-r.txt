@@ -1387,6 +1387,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable curved_text_boxes
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1498,6 +1499,7 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id doubleTitle
 id dragDown
 id dragLeft
 id dragRight
@@ -1528,7 +1530,6 @@ id graph
 id graph_wrap
 id group_divider
 id groups
-id guideline
 id home
 id homeAsUp
 id icon
@@ -1571,7 +1572,6 @@ id notification_main_column
 id notification_main_column_container
 id onAttachStateChangeListener
 id onDateChanged
-id one_title
 id outline
 id packed
 id parallax
@@ -1680,12 +1680,12 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id two_title
 id uniform
 id unlabeled
 id up
 id useLogo
 id view_offset_helper
+id vileTitle
 id visible
 id withText
 id wrap

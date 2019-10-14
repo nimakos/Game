@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity implements OnGameResponse, O
     @Override
     public void onGameSuccess(List<Game> games) {
         finalObjectList = new ArrayList<>();
-        ;
         for (Game game : games) {
             for (BetView betView : game.getBetViews()) {
                for (Competition competition : betView.getCompetitions()) {
@@ -73,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements OnGameResponse, O
                 }
             }
         }
-        myArrayAdapter = new MyArrayAdapter<>(getApplicationContext(), R.layout.view_games, finalObjectList);
+        myArrayAdapter = new MyArrayAdapter<>(getApplicationContext(), R.layout.view_headline, finalObjectList);
         listView.setAdapter(myArrayAdapter);
     }
 

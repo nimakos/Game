@@ -44,8 +44,8 @@ public class MyArrayAdapter<T> extends ArrayAdapter<T> {
             if (getItemViewType(position) == Common.HEADLINE_VIEW) {
                 TextView teams = convertView.findViewById(R.id.teams_title);
                 TextView time = convertView.findViewById(R.id.time_title);
-                TextView vile = convertView.findViewById(R.id.one_title);
-                TextView double1 = convertView.findViewById(R.id.two_title);
+                TextView vile = convertView.findViewById(R.id.vileTitle);
+                TextView double1 = convertView.findViewById(R.id.doubleTitle);
                 TextView draw = convertView.findViewById(R.id.draw_title);
 
                 teams.setText(finalObject.getCompetitor1Caption() + "\n" + finalObject.getCompetitor2Caption());
@@ -58,8 +58,8 @@ public class MyArrayAdapter<T> extends ArrayAdapter<T> {
                 TextView firstTeamGoals = convertView.findViewById(R.id.first_team_goals);
                 TextView secondTeamGoals = convertView.findViewById(R.id.second_team_goals);
                 TextView time = convertView.findViewById(R.id.time_title);
-                TextView vile = convertView.findViewById(R.id.one_title);
-                TextView double1 = convertView.findViewById(R.id.two_title);
+                TextView vile = convertView.findViewById(R.id.vileTitle);
+                TextView double1 = convertView.findViewById(R.id.doubleTitle);
                 TextView draw = convertView.findViewById(R.id.draw_title);
 
                 firstTeam.setText(finalObject.getCompetitor1());
