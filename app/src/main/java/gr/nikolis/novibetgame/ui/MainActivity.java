@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements OnGameResponse, O
 
     @Override
     public void onHeadLineUpdateSuccess(List<HeadLine> headLines) {
-        myArrayAdapter = new MyArrayAdapter<>(getApplicationContext(), R.layout.view_headline, finalObjectList);
+        //myArrayAdapter = new MyArrayAdapter<>(getApplicationContext(), R.layout.view_headline, finalObjectList);
     }
 
     @Override

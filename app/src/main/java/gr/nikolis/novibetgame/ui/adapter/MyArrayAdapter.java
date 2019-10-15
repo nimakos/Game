@@ -69,11 +69,11 @@ public class MyArrayAdapter<T> extends ArrayAdapter<T> {
                 time.setText("" + finalObject.getElapsed());
                 for (BetItem betItem : finalObject.getBetItems()) {
                     if (betItem.getCode().equals("1")) {
-                        vile.setText(betItem.getCode() + "\t\t\t" + betItem.getPrise());
+                        vile.setText(betItem.getCode() + "\t\t\t\t\t\t" + betItem.getPrise());
                     } else if (betItem.getCode().equals("X")) {
-                        draw.setText(betItem.getCode() + "\t\t\t" + betItem.getPrise());
+                        draw.setText(betItem.getCode() + "\t\t\t\t\t\t" + betItem.getPrise());
                     } else {
-                        double1.setText(betItem.getCode() + "\t\t\t" + betItem.getPrise());
+                        double1.setText(betItem.getCode() + "\t\t\t\t\t\t" + betItem.getPrise());
                     }
                 }
             }
