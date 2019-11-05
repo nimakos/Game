@@ -23,6 +23,7 @@ public class SplashActivity extends AppCompatActivity {
         user.setType("Bearer");
         user.setValidated(true);
         userData.saveUserData(user);
+        userData.clearUserData();
         if (userData.loadUserData().isValidated()) {
             Intent main = new Intent(SplashActivity.this, MainActivity.class);
             startActivity(main);

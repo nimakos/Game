@@ -32,40 +32,39 @@
 20-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:12:9-54
 21        android:supportsRtl="true"
 21-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:13:9-35
-22        android:testOnly="true"
-23        android:theme="@style/AppTheme" >
-23-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:14:9-40
-24        <activity android:name="gr.nikolis.novibetgame.ui.MainActivity" />
-24-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:15:9-84
-24-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:15:19-72
-25        <activity android:name="gr.nikolis.novibetgame.ui.SplashActivity" >
-25-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:16:9-22:20
-25-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:16:19-74
-26            <intent-filter>
-26-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:17:13-21:29
-27                <action android:name="android.intent.action.MAIN" />
-27-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:18:17-69
-27-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:18:25-66
-28
-29                <category android:name="android.intent.category.LAUNCHER" />
-29-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:20:17-77
-29-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:20:27-74
-30            </intent-filter>
-31        </activity>
-32        <activity android:name="gr.nikolis.novibetgame.ui.LoginActivity" />
-32-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:23:9-85
-32-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:23:19-73
-33
-34        <provider
-34-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\vnikolis\.gradle\caches\transforms-2\files-2.1\0d8487910cb5b29a0bf39fc7ce84ac98\extensions-1.1.1\AndroidManifest.xml:23:9-27:43
-35            android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"
-35-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\vnikolis\.gradle\caches\transforms-2\files-2.1\0d8487910cb5b29a0bf39fc7ce84ac98\extensions-1.1.1\AndroidManifest.xml:24:13-83
-36            android:authorities="gr.nikolis.novibetgame.lifecycle-trojan"
-36-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\vnikolis\.gradle\caches\transforms-2\files-2.1\0d8487910cb5b29a0bf39fc7ce84ac98\extensions-1.1.1\AndroidManifest.xml:25:13-68
-37            android:exported="false"
-37-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\vnikolis\.gradle\caches\transforms-2\files-2.1\0d8487910cb5b29a0bf39fc7ce84ac98\extensions-1.1.1\AndroidManifest.xml:26:13-37
-38            android:multiprocess="true" />
-38-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\vnikolis\.gradle\caches\transforms-2\files-2.1\0d8487910cb5b29a0bf39fc7ce84ac98\extensions-1.1.1\AndroidManifest.xml:27:13-40
-39    </application>
-40
-41</manifest>
+22        android:theme="@style/AppTheme" >
+22-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:14:9-40
+23        <activity android:name="gr.nikolis.novibetgame.ui.MainActivity" />
+23-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:15:9-84
+23-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:15:19-72
+24        <activity android:name="gr.nikolis.novibetgame.ui.SplashActivity" >
+24-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:16:9-22:20
+24-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:16:19-74
+25            <intent-filter>
+25-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:17:13-21:29
+26                <action android:name="android.intent.action.MAIN" />
+26-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:18:17-69
+26-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:18:25-66
+27
+28                <category android:name="android.intent.category.LAUNCHER" />
+28-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:20:17-77
+28-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:20:27-74
+29            </intent-filter>
+30        </activity>
+31        <activity android:name="gr.nikolis.novibetgame.ui.LoginActivity" />
+31-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:23:9-85
+31-->C:\Users\vnikolis\AndroidStudioProjects\Game\app\src\main\AndroidManifest.xml:23:19-73
+32
+33        <provider
+33-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\vnikolis\.gradle\caches\transforms-2\files-2.1\0d8487910cb5b29a0bf39fc7ce84ac98\extensions-1.1.1\AndroidManifest.xml:23:9-27:43
+34            android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"
+34-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\vnikolis\.gradle\caches\transforms-2\files-2.1\0d8487910cb5b29a0bf39fc7ce84ac98\extensions-1.1.1\AndroidManifest.xml:24:13-83
+35            android:authorities="gr.nikolis.novibetgame.lifecycle-trojan"
+35-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\vnikolis\.gradle\caches\transforms-2\files-2.1\0d8487910cb5b29a0bf39fc7ce84ac98\extensions-1.1.1\AndroidManifest.xml:25:13-68
+36            android:exported="false"
+36-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\vnikolis\.gradle\caches\transforms-2\files-2.1\0d8487910cb5b29a0bf39fc7ce84ac98\extensions-1.1.1\AndroidManifest.xml:26:13-37
+37            android:multiprocess="true" />
+37-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\vnikolis\.gradle\caches\transforms-2\files-2.1\0d8487910cb5b29a0bf39fc7ce84ac98\extensions-1.1.1\AndroidManifest.xml:27:13-40
+38    </application>
+39
+40</manifest>
